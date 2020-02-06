@@ -1,0 +1,9 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "A repo which can be used as starting point for projects",
+  "main": "index.js",
+  "author": "Ahmad Shafiq <mahmadshafiq786@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
