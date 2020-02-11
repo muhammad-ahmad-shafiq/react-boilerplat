@@ -14,17 +14,23 @@ const common = {
 	],
 	module: {
 		rules: [
-			// Load JS with Babel
+			// Load JS
 			{
 				test: /\.js$/,
 				include: path.resolve(__dirname, 'src'),
 				loader: 'babel-loader'
 			},
-			// Load Stylesheets with
+			// Load Stylesheets
 			{
 				test: /\.(sa|sc|c)ss$/,
 				include: path.resolve(__dirname, 'src/assets/styles'),
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      // Load images
+			{
+				test: /\.(png|svg|jpg|gif)$/,
+				include: path.resolve(__dirname, 'src/assets/images'),
+        use: ['file-loader']
 			}
 		]
 	},
