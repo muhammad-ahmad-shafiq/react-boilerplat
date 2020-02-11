@@ -1,6 +1,9 @@
 const path = require('path');
+const merge = require('webpack-merge');
+const devConfig = require('./webpack.dev');
+const prodConfig = require('./webpack.prod');
 
-module.exports = {
+const common = {
   entry: './src',
   output: {
     path: path.join(__dirname, 'public'),
@@ -16,11 +19,10 @@ module.exports = {
       }
     ]
   },
-  devtool: 'cheap-module-eval-source-map',
-  devServer: {
-    port: 4000,
-    host: 'localhost',
-    historyApiFallback: true,
-    contentBase: './public',
-  },
-};
+}
+
+module.exports = (_env, options) => {
+  const envConfig = options.mode === 'production' ? prodConfig : devConfig;
+
+  return merge(common, envConfig);
+}
