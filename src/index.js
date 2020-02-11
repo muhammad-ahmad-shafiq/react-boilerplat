@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const template = <p>Hello from react</p>;
+import { Hello } from "./components";
 
-ReactDOM.render(template, document.getElementById('root'));
+ReactDOM.render(<Hello />, document.getElementById('root'));
