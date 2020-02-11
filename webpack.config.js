@@ -19,6 +19,12 @@ const common = {
 				test: /\.js$/,
 				include: path.resolve(__dirname, 'src'),
 				loader: 'babel-loader'
+			},
+			// Load Stylesheets with
+			{
+				test: /\.(sa|sc|c)ss$/,
+				include: path.resolve(__dirname, 'src/assets/styles'),
+        use: ['style-loader', 'css-loader', 'sass-loader']
 			}
 		]
 	},
