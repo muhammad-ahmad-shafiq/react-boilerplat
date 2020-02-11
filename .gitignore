@@ -6,5 +6,8 @@
 #public
 /public/bundle.js
 
+# Production
+/build
+
 # misc
 .DS_Store

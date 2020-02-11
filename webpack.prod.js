@@ -1,10 +1,9 @@
+const path = require('path');
+
 module.exports = {
-    mode: 'production',
-    devtool: 'cheap-module-eval-source-map',
-    devServer: {
-      port: 5000,
-      host: 'localhost',
-      historyApiFallback: true,
-      contentBase: './public',
-    },
-  };
+  mode: 'production',
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'build'),
+  },
+};
