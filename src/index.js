@@ -2,6 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import "./assets/styles/index.scss";
 
-import { Hello } from "./components";
+import { Provider } from 'react-redux';
+import store from './store';
 
-ReactDOM.render(<Hello />, document.getElementById('root'));
+import { SampleRedux } from "./components";
+
+ReactDOM.render(
+  <Provider store={store}>
+    <SampleRedux />
+  </Provider>,
+  document.getElementById('root')
+);
